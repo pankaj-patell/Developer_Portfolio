@@ -1,73 +1,130 @@
-# Welcome to your PORTFOLIO
+# Developer Portfolio
 
-## Project info
+A modern, responsive personal portfolio website built with **React**, **TypeScript**, and **Tailwind CSS**. It showcases an about section, skills, work experience, projects, certifications, and a working contact form — all in a fast, single-page app powered by Vite.
 
-**URL**: https://lovable.dev/projects/3744d692-7d2a-486d-8227-a604fdd78253
+## Features
 
-## How can I edit this code?
+- **Hero section** with intro and call-to-action
+- **About** section
+- **Skills** overview
+- **Experience** timeline
+- **Portfolio / Projects** showcase
+- **Services** offered
+- **Certifications** section
+- **Contact form** with email delivery via [EmailJS](https://www.emailjs.com/)
+- Responsive navbar with smooth in-page navigation
+- Toast notifications for form feedback
+- Fully responsive, mobile-friendly layout
+- Custom 404 (Not Found) page
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **[Vite](https://vitejs.dev/)** – build tool and dev server
+- **[React 18](https://react.dev/)** + **TypeScript**
+- **[React Router](https://reactrouter.com/)** – client-side routing
+- **[Tailwind CSS](https://tailwindcss.com/)** – utility-first styling
+- **[shadcn/ui](https://ui.shadcn.com/)** + **[Radix UI](https://www.radix-ui.com/)** – accessible UI primitives
+- **[TanStack Query](https://tanstack.com/query)** – data/state management
+- **[React Hook Form](https://react-hook-form.com/)** + **[Zod](https://zod.dev/)** – forms and validation
+- **[EmailJS](https://www.emailjs.com/)** – contact form email delivery
+- **[Lucide React](https://lucide.dev/)** – icons
+- **ESLint** – linting
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3744d692-7d2a-486d-8227-a604fdd78253) and start prompting.
+## Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+Developer_Portfolio/
+├── public/                     # Static assets (favicon, robots.txt, etc.)
+├── src/
+│   ├── assets/                 # Images and static media
+│   ├── components/
+│   │   ├── ui/                 # shadcn/ui base components
+│   │   ├── HeroSection.tsx
+│   │   ├── AboutSection.tsx
+│   │   ├── SkillsSection.tsx
+│   │   ├── ExperienceSection.tsx
+│   │   ├── PortfolioSection.tsx
+│   │   ├── ServicesSection.tsx
+│   │   ├── CertificationSection.tsx
+│   │   ├── ContactSection.tsx
+│   │   ├── Navbar.tsx / NavLink.tsx
+│   │   └── Footer.tsx
+│   ├── hooks/                  # Custom React hooks
+│   ├── lib/                    # Utility functions
+│   ├── pages/
+│   │   ├── Index.tsx           # Main landing page (assembles all sections)
+│   │   └── NotFound.tsx        # 404 page
+│   ├── App.tsx                 # App routes and providers
+│   ├── main.tsx                # App entry point
+│   ├── App.css / index.css     # Global styles
+│   └── vite-env.d.ts
+├── components.json             # shadcn/ui configuration
+├── tailwind.config.ts
+├── vite.config.ts
+├── tsconfig*.json
+└── package.json
 ```
 
-**Edit a file directly in GitHub**
+## Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- [Node.js](https://nodejs.org/) (v18 or higher recommended) and npm — or [Bun](https://bun.sh/), since a `bun.lockb` is included
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Installation
 
-## What technologies are used for this project?
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/<your-username>/Developer_Portfolio.git
+   cd Developer_Portfolio
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+   or, with Bun:
+   ```bash
+   bun install
+   ```
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:5173` (default Vite port).
 
-This project is built with:
+### Available Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Command             | Description                                  |
+|----------------------|-----------------------------------------------|
+| `npm run dev`        | Start the local development server            |
+| `npm run build`      | Build the app for production                  |
+| `npm run build:dev`  | Build in development mode                      |
+| `npm run lint`       | Run ESLint on the project                       |
+| `npm run preview`    | Preview the production build locally           |
 
-## How can I deploy this project?
+## Configuring the Contact Form (EmailJS)
 
-Simply open [Lovable](https://lovable.dev/projects/3744d692-7d2a-486d-8227-a604fdd78253) and click on Share -> Publish.
+The contact form sends messages using EmailJS. The service ID, template ID, and public key are currently set directly in `src/components/ContactSection.tsx`. Before deploying your own copy:
 
-## Can I connect a custom domain to my Lovable project?
+1. Create an account at [EmailJS](https://www.emailjs.com/) and set up a service + email template.
+2. Replace the `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, and `EMAILJS_PUBLIC_KEY` values in `ContactSection.tsx` with your own.
+3. For better security, consider moving these into environment variables (e.g. a `.env` file with `VITE_` prefixed keys) instead of hardcoding them in source.
 
-Yes, you can!
+## Customization
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Update personal details, project entries, skills, and experience directly within the relevant component files in `src/components/`.
+- Replace images in `src/assets/` (e.g. profile photo) with your own.
+- Adjust theme colors and design tokens in `tailwind.config.ts` and `src/index.css`.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Deployment
+
+Since this is a standard Vite + React app, it can be deployed to any static hosting provider, such as:
+
+- [Netlify](https://www.netlify.com/)
+- [GitHub Pages](https://pages.github.com/)
+
+Build the project first with `npm run build`, then deploy the contents of the generated `dist/` folder.
+
+## License
+
+This project currently has no license specified. Add a `LICENSE` file if you intend to open-source it under a specific license (e.g. MIT).
