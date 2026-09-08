@@ -9,7 +9,7 @@ const projects = [
     technologies: ["TypeScript", "Angular", "Node.js", "MySQL"],
     color: "primary",
     showGitHub: true,
-    githubUrl: "#",
+    githubUrl: "https://github.com/pankaj-patell/PD_Truck_Rental",
     showLiveDemo: true,
     liveUrl: "https://pdtruckrental.com/"
   },
@@ -31,7 +31,7 @@ const projects = [
     technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     color: "primary",
     showGitHub: true,
-    githubUrl: "#",
+    githubUrl: "https://github.com/pankaj-patell/Lediea",
     showLiveDemo: false,
     liveUrl: "https://dazlpro.com/"
   },
@@ -58,13 +58,13 @@ const projects = [
     liveUrl: "https://www.boxxerworld.com/"
   },
    {
-    title: "Personal Portfolio",
+    title: "Developer Portfolio",
     description:
       "A thoughtfully designed digital space built to turn a developer’s experience into an interactive story, combining project showcases, technical expertise, and professional milestones in a seamless browsing experience.",
     technologies: ["React", "TypeScript" ,"Tailwind CSS"],
     color: "accent",
     showGitHub: true,
-    githubUrl: "#",
+    githubUrl: "https://github.com/pankaj-patell/Developer_Portfolio",
     showLiveDemo: true,
     liveUrl: "https://pankajpatelportfolio.netlify.app/"
   },
