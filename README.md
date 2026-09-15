@@ -1,4 +1,4 @@
-# Developer Portfolio
+# Personal Portfolio
 
 A modern, responsive personal portfolio website built with **React**, **TypeScript**, and **Tailwind CSS**. It showcases an about section, skills, work experience, projects, certifications, and a working contact form — all in a fast, single-page app powered by Vite.
 
